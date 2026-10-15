@@ -1,0 +1,100 @@
+@import '@fontsource-variable/inter';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space: #050816;
+  --navy: #0B1226;
+  --atmos-blue: #4DA3FF;
+  --sun-amber: #FFB454;
+  --ir-coral: #FF665A;
+  --mint: #67E8B5;
+  --text: #F5F7FB;
+  --text-muted: #A9B4C8;
+}
+
+/* Custom base resets */
+html {
+  background-color: var(--space);
+  color: var(--text);
+  font-family: 'InterVariable', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--space);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Accessible focus ring styling */
+:focus-visible {
+  outline: 2px solid var(--atmos-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2b50;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3e70;
+}
+
+/* Reduced motion explicit class override */
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Custom cinematic glow classes */
+.glow-atmos {
+  box-shadow: 0 0 50px -10px rgba(77, 163, 255, 0.35);
+}
+
+.glow-sun {
+  box-shadow: 0 0 60px -5px rgba(255, 180, 84, 0.4);
+}
+
+.glow-ir {
+  box-shadow: 0 0 50px -10px rgba(255, 102, 90, 0.35);
+}
+
+.glow-mint {
+  box-shadow: 0 0 50px -10px rgba(103, 232, 181, 0.35);
+}
+
+/* Background grid / noise subtle accents */
+.bg-cosmic-radial {
+  background: radial-gradient(circle at 75% 25%, rgba(77, 163, 255, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(103, 232, 181, 0.04) 0%, transparent 50%),
+              #050816;
+}
+
+.bg-space-mesh {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
